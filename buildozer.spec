@@ -5,11 +5,9 @@ package.domain = github.ABindoff
 source.dir = .
 source.include_exts = py
 version = 1.0
-requirements = python3,sdl2,pygame
+requirements = python3,pygame
 orientation = portrait
 fullscreen = 1
-
-# Android-specific
 android.permissions = VIBRATE
 android.api = 33
 android.minapi = 21
