@@ -15,6 +15,7 @@ import random
 import array as _arr
 import math
 import os
+import asyncio
 
 pygame.init()
 
@@ -503,7 +504,7 @@ def new_game(level, hi):
     return p, EnemyGrid(level=level), []
 
 
-def main():
+async def main():
     state  = "title"
     level  = 1
     hi     = 0
@@ -666,7 +667,8 @@ def main():
             draw_touch_buttons(WIN, touch_left, touch_right)
 
         pygame.display.flip()
+        await asyncio.sleep(0)   # yield to browser event loop (pygbag)
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
